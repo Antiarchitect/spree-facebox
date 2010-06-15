@@ -1,0 +1,7 @@
+<div class="product-image">
+  <% if image_controls.enable_zoom? %>
+    <%= link_to image_tag(image.attachment.url(:small)), image.attachment.url(:xl), :rel => 'facebox' %>
+  <% else %>
+    <%= image_tag image.attachment.url(:product) %>
+  <% end %>
+</div>
