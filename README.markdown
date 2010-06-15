@@ -15,7 +15,7 @@ script/extension install git://github.com/Antiarchitect/spree-facebox.git
 </pre>
 
 # Consequences
-New extra large image size of 1200x1200. So when new image were uploaded on server it will have a 1200x1200 size, old images will not.
+New extra large image size of 1000x1000. So when new image uploaded on server it will have a 1000x1000 size in addition to default sizes, old images will not.
 I think there is the way to generate extra large size of them through rake (unconfirmed).
 
 # TODO
