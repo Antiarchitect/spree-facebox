@@ -1,0 +1,1 @@
+Spree::Config.set(:stylesheets => Spree::Config[:stylesheets] + ',facebox,product')
