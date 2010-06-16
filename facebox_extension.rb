@@ -32,7 +32,7 @@ class FaceboxExtension < Spree::Extension
       def contains_image_without_style?(images, style)
         return false if images.blank?
         images.each do |image|
-          return true if image.attachment.path(style)
+          return true unless image.attachment.path(style)
         end
         return false
       end
