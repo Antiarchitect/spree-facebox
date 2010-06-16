@@ -10,16 +10,6 @@ class FaceboxExtension < Spree::Extension
       { :mini => '48x48>', :small => '100x100>', :product => '240x240>',
         :large => '600x600>', :xl => '1000x1000>' }
 
-    Spree::BaseHelper.class_eval do
-      def product_image_path(product, image_style=:original)
-        if product.images.empty?
-          image_path "noimage/#{image_style.to_s}.jpg"
-        else
-          image_path product.images.first.attachment.url(image_style)
-        end
-      end
-    end
-
     ProductsHelper.class_eval do
       def image_controls
         @image_controls ||= Facebox::ImageControls.new(@product)
@@ -42,8 +32,7 @@ class FaceboxExtension < Spree::Extension
       def contains_image_without_style?(images, style)
         return false if images.blank?
         images.each do |image|
-          path = image.attachment.path(style)
-          return true if !File.exists?(path)
+          return true if image.attachment.path(style)
         end
         return false
       end
