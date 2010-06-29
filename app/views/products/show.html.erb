@@ -2,7 +2,10 @@
 <h1><%= @product.name %></h1>
 
 <div id="product-images">
-  <%= render :partial => 'image', :collection => @product.images -%>
+  <%= render :partial => 'image', :collection => @product.images, :locals => {:size => :product} -%>
+  <% if @product.has_variants? -%>
+    <%= render :partial => 'variant', :collection => @variants -%>
+  <% end -%>
   <%= javascript_tag "jQuery(document).ready(function() {
          jQuery('a[rel*=facebox]').facebox()
        })" %>
