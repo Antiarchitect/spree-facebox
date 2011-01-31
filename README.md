@@ -11,7 +11,7 @@ http://github.com/eliotsykes/spree-zoom-photos
 # Installation
 Installation is quite simple:
 * Add the gem source to your Gemfile
-    `gem 'spree_facebox', :git => 'https://github.com/jmcarthur/spree-facebox.git', :branch => 'rails3'`
+    `gem 'spree_facebox', :git => 'https://github.com/3months/spree-facebox.git', :branch => 'rails3'`
 * Run `bundle install` and then `rake spree_facebox:install:assets`
 
 # Consequences
