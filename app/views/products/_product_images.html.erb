@@ -1,0 +1,15 @@
+  <div id="main-image">
+    <%= render :partial => 'facebox_image', :locals => {:image => @product.images.first, :size => :product} -%>
+  </div>
+  <div id="product-thumbnails" class="thumbnails">
+    <%= render :partial => 'facebox_image', :collection => @product.images[1..-1], :locals => {:size => :product} -%>
+  </div>
+  <% if @product.has_variants? -%>
+    <div id="variant-thumbnails" class="thumbnails">
+      <% @variants.each do |variant| %>
+        <h4><%= variant.name %></h4>
+        <%= render :partial => 'facebox_image', :collection => variant.images, :locals => {:size => :small} -%>
+      <% end -%>
+    </div>
+  <% end -%>
+

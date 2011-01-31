@@ -1,5 +1,3 @@
-# Put your extension routes here.
-
-# map.namespace :admin do |admin|
-#   admin.resources :whatever
-# end  
+Rails.application.routes.draw do
+  # Add your extension routes here
+end
